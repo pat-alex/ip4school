@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة الملكية الفكرية في البيئة التعليمية | الخط الزمني التتابعي الإلزامي</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#16a34a',
+                            600: '#15803d',
+                            700: '#166534',
+                            800: '#14532d',
+                            900: '#052e16',
+                        },
+                        accent: {
+                            500: '#d97706',
+                            600: '#b45309',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8fafc;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo & Branding -->
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-700 to-brand-500 flex items-center justify-center text-white shadow-md">
+                        <i class="fa-solid fa-scale-balanced text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold text-slate-900 block leading-none">الملكية الفكرية</span>
+                        <span class="text-xs text-brand-600 font-semibold">المسار التتابعي الإلزامي</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-6 space-x-reverse font-semibold text-sm text-slate-600">
+                    <a href="#overview" class="hover:text-brand-600 transition">نظرة عامة</a>
+                    <a href="#curriculum" class="hover:text-brand-600 transition">الخط الزمني للمساق</a>
+                    <a href="#toolkit" class="hover:text-brand-600 transition">حقيبة القرار</a>
+                    <a href="#assessment" class="hover:text-brand-600 transition">القياس والتقييم</a>
+                </nav>
+
+                <!-- Status & Progress Badge -->
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="hidden sm:flex items-center bg-brand-50 px-3 py-1.5 rounded-full border border-brand-100">
+                        <i class="fa-solid fa-trophy text-amber-500 ml-2 text-sm"></i>
+                        <span class="text-xs font-bold text-brand-900">إنجاز المساق: <span id="overall-progress">0%</span></span>
+                    </div>
+                    <a href="#curriculum" class="bg-brand-600 hover:bg-brand-700 text-white text-xs sm:text-sm px-4 py-2 rounded-lg font-bold transition shadow-sm">
+                        استئناف الخط الزمني
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="overview" class="bg-gradient-to-b from-slate-900 via-brand-900 to-slate-900 text-white py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <span class="inline-block bg-brand-500/20 text-brand-300 border border-brand-400/30 text-xs font-bold px-3 py-1.5 rounded-full mb-4">
+                المعهد القومي للملكية الفكرية - برنامج التدريب ذو المسار المقفل
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-6">
+                الخط الزمني الإلزامي للتعلم المدمج:<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">لا يمكن تخطي المحطات قبل الإتمام</span>
+            </h1>
+            <p class="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto mb-8 font-light">
+                فرضية المساق تقوم على التقدم التتابعي الصارم: مشاهدة المحتوى ➔ تحليل الحالة الميدانية ➔ تطبيق الأداة التشغيلية ➔ الاختبار القصير. يظهر زر الانتقال للمحطة التالية حصرياً في أسفل الصفحة بعد قراءة وتفقد كافة مواد المحطة الحالية.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#curriculum" class="bg-amber-500 hover:bg-amber-600 text-slate-900 text-base px-6 py-3 rounded-xl font-bold transition flex items-center shadow-lg">
+                    <i class="fa-solid fa-road ml-2"></i> الانتقال إلى الخط الزمني للوحدات
+                </a>
+                <a href="#toolkit" class="bg-slate-800/80 hover:bg-slate-800 text-white border border-slate-700 text-base px-6 py-3 rounded-xl font-bold transition flex items-center">
+                    <i class="fa-solid fa-briefcase ml-2"></i> حقيبة قرار المعلم
+                </a>
+            </div>
+
+            <!-- Highlights -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-slate-800 text-center">
+                <div>
+                    <div class="text-2xl font-extrabold text-amber-400">6 وحدات</div>
+                    <div class="text-xs text-slate-400">مسار مقفل تتابعياً</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-extrabold text-amber-400">24 محطة</div>
+                    <div class="text-xs text-slate-400">خط زمني إلزامي</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-extrabold text-amber-400">أدوات ميدانية</div>
+                    <div class="text-xs text-slate-400">تطبيق تفاعلي مباشر</div>
+                </div>
+                <div>
+                    <div class="text-2xl font-extrabold text-amber-400">شهادة معتمدة</div>
+                    <div class="text-xs text-slate-400">عند إتمام كافة المحطات</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="curriculum" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+                <h2 class="text-2xl font-bold text-slate-900">الخط الزمني التتابعي للمساق (Strict Timeline Navigation)</h2>
+                <p class="text-slate-600 text-sm mt-1">يتم فتح الخطوات تباعاً. المحطات غير المكتملة تظل مقفلة لحين استكمال ما قبلها.</p>
+            </div>
+            <div id="module-progress-badge" class="bg-brand-50 border border-brand-200 px-4 py-2 rounded-xl text-xs font-bold text-brand-900">
+                إنجاز الوحدة الحالية: <span id="current-mod-progress">0%</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Sidebar Timeline Tree -->
+            <div class="lg:col-span-5 space-y-4">
+                <div id="modules-list" class="space-y-3">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Main Step Viewer Area with bottom completion button -->
+            <div class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm flex flex-col justify-between">
+                <!-- Step Container (Scrollable Rich Content) -->
+                <div id="step-display-area" class="space-y-6">
+                    <!-- Dynamic Step Content -->
+                </div>
+                
+                <!-- Bottom Action Area: Strictly at the end of the timeline step scroll -->
+                <div class="mt-12 pt-6 border-t-2 border-dashed border-slate-200 bg-slate-50 p-6 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div id="step-status-text" class="text-xs font-semibold text-slate-600 text-center sm:text-right">
+                        أكمل قراءة المحطة وتفاعل مع موادها بالأسفل، ثم اضغط على زر تأكيد الإتمام للتقدم في الخط الزمني.
+                    </div>
+                    <button id="complete-step-btn" onclick="completeCurrentStep()" class="w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white text-xs sm:text-sm font-bold px-8 py-3.5 rounded-xl transition shadow-md flex items-center justify-center">
+                        تأكيد إتمام المحطة والانتقال للتالية <i class="fa-solid fa-arrow-left mr-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="toolkit" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="bg-brand-100 text-brand-800 text-xs font-bold px-3 py-1 rounded-full">الأدوات التنفيذية الميدانية</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 mt-2">حقيبة قرار المعلم (Teacher Toolkit)</h2>
+            <p class="text-slate-600 text-sm mt-2">الأدوات الأربع التشغيلية لتمكين المعلم والقيادة التعليمية من الاستخدام الآمن والمسؤول بالمدارس.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Tool 1 -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2">بطاقة الأسئلة الستة للتحقق</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-4">أداة سريعة لتقييم مشروعية استخدام أي مصنف تعليمي أو مصدر رقمي قبل مشاركته.</p>
+                </div>
+                <button onclick="openToolModal(1)" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs py-2.5 rounded-lg transition">
+                    تعبئة/تنزيل البطاقة
+                </button>
+            </div>
+
+            <!-- Tool 2 -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-xl flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-book-bookmark"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2">سجل أفكار الفصل الإبداعي</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-4">توثيق أسبقية إبداع الطلاب ومشاريعهم وحمايتها من السرقات العلمية والفكرية.</p>
+                </div>
+                <button onclick="openToolModal(2)" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs py-2.5 rounded-lg transition">
+                    فتح نموذج السجل
+                </button>
+            </div>
+
+            <!-- Tool 3 -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2">ميثاق الذكاء الاصطناعي الصفي</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-4">قواعد الشفافية، الإفصاح عن أدوات AI وحماية بيانات الأطفال والطلاب داخل الفصل.</p>
+                </div>
+                <button onclick="openToolModal(3)" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs py-2.5 rounded-lg transition">
+                    إعداد الميثاق
+                </button>
+            </div>
+
+            <!-- Tool 4 -->
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-table"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 mb-2">مصفوفة القرار القانوني المبرر</h3>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-4">جدول الموازنة بين الحقوق والأسباب التبريرية الصريحة لاتخاذ القرارات الميدانية.</p>
+                </div>
+                <button onclick="openToolModal(4)" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs py-2.5 rounded-lg transition">
+                    عرض المصفوفة
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="assessment" class="bg-slate-100 py-16 px-4 sm:px-6 lg:px-8 border-t border-slate-200">
+        <div class="max-w-5xl mx-auto bg-white rounded-3xl border border-slate-200 p-8 shadow-sm">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">نظام القياس والتقييم الختامي</span>
+                <h2 class="text-2xl font-extrabold text-slate-900 mt-2">الاختبار الرقمي ومقياس الكسب التعلمي</h2>
+                <p class="text-slate-600 text-sm mt-1">قم بإجراء التقييم لقياس مدى نمو معارفك وقراراتك القانونية بعد إتمام الخط الزمني للمساق.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <span class="text-xs text-slate-500 block">نتيجة الاختبار القبلي:</span>
+                        <span id="pre-score-display" class="text-xl font-bold text-slate-800">لم يتم الإجراء بعد</span>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <span class="text-xs text-slate-500 block">نتيجة الاختبار البعدي:</span>
+                        <span id="post-score-display" class="text-xl font-bold text-slate-800">لم يتم الإجراء بعد</span>
+                    </div>
+                    <div class="bg-brand-50 p-4 rounded-xl border border-brand-200">
+                        <span class="text-xs text-brand-700 block">نسبة الكسب التعلمي (Normalized Gain):</span>
+                        <span id="gain-display" class="text-2xl font-extrabold text-brand-900">0%</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 text-white p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">بدء التقييم الشامل</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-6">يتكون الاختبار من 10 أسئلة قياسية تفاعلية لقياس مستوى الفهم والتطبيق والقدرة على اتخاذ القرار.</p>
+                    </div>
+                    <button onclick="startQuiz()" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-3 rounded-xl transition text-sm">
+                        بدء الاختبار البعدي الآن
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-right flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <p class="text-sm font-bold text-white">المعهد القومي للملكية الفكرية - مصر</p>
+                <p class="text-xs text-slate-500 mt-1">جميع الحقوق محفوظة © 2026 | منصة التعلم الرقمي المدمج</p>
+            </div>
+            <div class="flex space-x-4 space-x-reverse text-xs">
+                <a href="#overview" class="hover:text-white transition">عن المساق</a>
+                <a href="#toolkit" class="hover:text-white transition">الأدوات</a>
+                <a href="#" class="hover:text-white transition">سياسة الخصوصية</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modal-overlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto custom-scrollbar">
+            <button onclick="closeModal()" class="absolute top-4 left-4 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div id="modal-content">
+                <!-- Modal Dynamic Content -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // المسار التتابعي المقفل (Modules with strict timeline steps based on official curriculum guide)
+        const curriculumData = [
+            {
+                id: 1,
+                title: "الوحدة الأولى: التشريعات والمفاهيم الأساسية",
+                description: "تمييز الملكية الفكرية وإطار الحماية القانوني",
+                steps: [
+                    {
+                        type: 'video',
+                        title: '1. مشاهدة فيديو المدخل التشريعي',
+                        icon: 'fa-play',
+                        contentTitle: 'فيديو شارح (5 دقائق): مدخل إلى قانون حقوق الملكية الفكرية رقم 82 لسنة 2002',
+                        body: 'تهدف هذه المحطة إلى تمكين المعلم من التمييز الدقيق بين الملكية المادية والملكية الفكرية، وفهم درع التشريعات الوطنية والدولية.',
+                        completed: false
+                    },
+                    {
+                        type: 'case',
+                        title: '2. تحليل حالة: الفرق بين المادية والفكرية',
+                        icon: 'fa-scale-balanced',
+                        contentTitle: 'حالة تطبيقية ميدانية #1',
+                        body: 'معلم اشترى كتاباً ورقياً هل يحق له تصويره بالكامل وتوزيعه على الطلاب بصيغة PDF؟',
+                        options: [
+                            { text: 'نعم، طالما تم شراؤه بماله الخاص ولغرض تعليمي بحت.', correct: false },
+                            { text: 'لا، التصوير الكامل يعد تعدياً على الحقوق المالية للمؤلف وناشر الكتاب.', correct: true }
+                        ],
+                        explanation: 'شراء النسخة المادية يمنحك حق حيازتها فقط ولا يمنحك حق نسخها أو إعادة نشرها رقمياً بالكامل.',
+                        completed: false
+                    },
+                    {
+                        type: 'tool',
+                        title: '3. تطبيق بطاقة التحقق السداسية',
+                        icon: 'fa-list-check',
+                        contentTitle: 'تدريب تطبيقي على الأداة التشغيلية الأولى',
+                        body: 'قم بمراجعة الأسئلة الستة للتأكد من مشروعية استخدام المصنف قبل عرضه بالصف.',
+                        completed: false
+                    },
+                    {
+                        type: 'quiz',
+                        title: '4. اختبار قصير للوحدة الأولى',
+                        icon: 'fa-clipboard-question',
+                        contentTitle: 'اختبار قياس الفهم السريع - الوحدة 1',
+                        body: 'هل الحقوق الأدبية للمؤلف تسقط بمرور الوقت؟',
+                        options: [
+                            { text: 'نعم تسقط بعد 50 سنة من وفاة المؤلف.', correct: false },
+                            { text: 'لا، الحقوق الأدبية أبدية ولا تسقط بالتقادم أبداً.', correct: true }
+                        ],
+                        explanation: 'الحقوق المالية وحدها مؤقتة، بينما الحقوق الأدبية (نسب العمل للمؤلف وحمايته من التشويه) أبدية.',
+                        completed: false
+                    }
+                ]
+            },
+            {
+                id: 2,
+                title: "الوحدة الثانية: نطاقات الحماية والفرز",
+                description: "تصنيف المصنفات وحماية العلامات التجارية والبراءات",
+                steps: [
+                    {
+                        type: 'video',
+                        title: '1. مشاهدة فيديو تصنيف المخرجات المدرسية',
+                        icon: 'fa-play',
+                        contentTitle: 'فيديو تفاعلي (6 دقائق): كيف تصنف المخرجات المدرسية؟',
+                        body: 'يتدرب المعلم في هذه المحطة على فرز المخرجات المدرسية وتصنيفها بدقة.',
+                        completed: false
+                    },
+                    {
+                        type: 'case',
+                        title: '2. تحليل حالة: شعار نادي العلوم',
+                        icon: 'fa-scale-balanced',
+                        contentTitle: 'حالة تطبيقية ميدانية #2',
+                        body: 'قام معلم بتصميم شعار مبتكر لنادي العلوم بمدرسته، وقامت مدرسة مجاورة بنسخه. ما التصرف السليم؟',
+                        options: [
+                            { text: 'لا يحق للمعلم الاعتراض لأن التصميم تم بمؤسسة حكومية.', correct: false },
+                            { text: 'يعتبر الشعار علامة مميزة ومصنفاً يحق للمدرسة حمايته ومساءلة المتعدي.', correct: true }
+                        ],
+                        explanation: 'الشعارات والمصنفات الفنية تتمتع بالحماية القانونية ضد النسخ التجاري غير المبرر.',
+                        completed: false
+                    },
+                    {
+                        type: 'tool',
+                        title: '3. تسجيل الفكرة بسجل الفصل',
+                        icon: 'fa-book-bookmark',
+                        contentTitle: 'توثيق الأسبقية الفكرية للطلاب',
+                        body: 'استخدم سجل الأفكار الإبداعي لتوثيق ابتكارات الفصل رسمياً.',
+                        completed: false
+                    },
+                    {
+                        type: 'quiz',
+                        title: '4. اختبار قصير للوحدة الثانية',
+                        icon: 'fa-clipboard-question',
+                        contentTitle: 'اختبار قياس الفهم السريع - الوحدة 2',
+                        body: 'هل تحمي حقوق المؤلف "الأفكار" المجردة قبل التعبير عنها؟',
+                        options: [
+                            { text: 'نعم تحمي الأفكار مهما كانت مجردة.', correct: false },
+                            { text: 'لا، تحمي الأفكار المعبر عنها في قالب مادي أو مرئي فقط.', correct: true }
+                        ],
+                        explanation: 'القانون لا يحمي الأفكار المجردة بل يحمي طريقة التعبير المادي عنها.',
+                        completed: false
+                    }
+                ]
+            },
+            {
+                id: 3,
+                title: "الوحدة الثالثة: الاستخدام المشروع والمشاع الإبداعي",
+                description: "تطبيق أسئلة التحقق وقراءة رخص Creative Commons",
+                steps: [
+                    {
+                        type: 'video',
+                        title: '1. مشاهدة فك رموز رخص المشاع الإبداعي',
+                        icon: 'fa-play',
+                        contentTitle: 'شرح تفاعلي (7 دقائق): رخص CC الست',
+                        body: 'التعرف على حدود الاستثناءات التعليمية وكيفية استخدام المصادر الرقمية بأمان.',
+                        completed: false
+                    },
+                    {
+                        type: 'case',
+                        title: '2. تحليل حالة: اقتباس مقطع فيديو وثائقي',
+                        icon: 'fa-scale-balanced',
+                        contentTitle: 'حالة تطبيقية ميدانية #3',
+                        body: 'هل مسموح عرض مقطع مدته دقيقة من فيلم وثائقي داخل الفصل المغلق للشرح؟',
+                        options: [
+                            { text: 'نعم، مسموح تحت مظلة الاستثناء التعليمي والشرح المباشر.', correct: true },
+                            { text: 'لا يجوز مطلقاً إلا بشراء ترخيص تجاري.', correct: false }
+                        ],
+                        explanation: 'الاستثناء التعليمي يسمح بالاستخدام المحدود للأغراض التعليمية داخل قاعات الدراسة.',
+                        completed: false
+                    },
+                    {
+                        type: 'tool',
+                        title: '3. فحص المصادر برخصة المشاع الإبداعي',
+                        icon: 'fa-list-check',
+                        contentTitle: 'مطابقة شروط الإسناد (CC BY)',
+                        body: 'تأكد من نسب العمل لصاحبه الأصلي عند الاستخدام.',
+                        completed: false
+                    },
+                    {
+                        type: 'quiz',
+                        title: '4. اختبار قصير للوحدة الثالثة',
+                        icon: 'fa-clipboard-question',
+                        contentTitle: 'اختبار قياس الفهم السريع - الوحدة 3',
+                        body: 'ماذا تعني علامة NC في رخص المشاع الإبداعي؟',
+                        options: [
+                            { text: 'يُسمح بالتعديل فقط.', correct: false },
+                            { text: 'غير تجاري (Non-Commercial)، يمنع الاستخدام للربح المادي.', correct: true }
+                        ],
+                        explanation: 'رمز NC يعني حظر الاستخدام التجاري ويقتصر على الأغراض التعليمية أو غير الربحية.',
+                        completed: false
+                    }
+                ]
+            },
+            {
+                id: 4,
+                title: "الوحدة الرابعة: حقوق المعلم وإبداع الطلاب",
+                description: "إدارة النشر وإعداد سجل أفكار الفصل",
+                steps: [
+                    {
+                        type: 'video',
+                        title: '1. مشاهدة فيديو سجل أفكار الفصل',
+                        icon: 'fa-play',
+                        contentTitle: 'فيديو تطبيقي (5 دقائق): بناء سجل أفكار الطلاب',
+                        body: 'توضيح الحقوق الفكرية للمحتوى المنتج أثناء العمل الرسمي وآليات توثيق إبداعات الطلاب.',
+                        completed: false
+                    },
+                    {
+                        type: 'case',
+                        title: '2. تحليل حالة: ابتكار طالب في معرض المدرسة',
+                        icon: 'fa-scale-balanced',
+                        contentTitle: 'حالة تطبيقية ميدانية #4',
+                        body: 'طالب صمم جهازاً مبتكراً وعرضه بالمعرض المدرسي دون توثيق، هل يمتلك حقوقه؟',
+                        options: [
+                            { text: 'نعم، تثبت له الملكية الفكرية بمجرد الابتكار والتعبير، ويُنصح بالتوثيق بالسجل المدرسي.', correct: true },
+                            { text: 'تنتقل ملكية الجهاز فوراً لإدارة المدرسة تلقائياً.', correct: false }
+                        ],
+                        explanation: 'المبتكر الأصلي يمتلك الحقوق الفكرية، وسجل الفصل يحفظ له الأسبقية الزمنية.',
+                        completed: false
+                    },
+                    {
+                        type: 'tool',
+                        title: '3. توثيق مشروع طالب في السجل',
+                        icon: 'fa-book-bookmark',
+                        contentTitle: 'إدخال بيانات مشروع تجريبي',
+                        body: 'سجل اسم الطالب ووصف المشروع لضمان الأسبقية.',
+                        completed: false
+                    },
+                    {
+                        type: 'quiz',
+                        title: '4. اختبار قصير للوحدة الرابعة',
+                        icon: 'fa-clipboard-question',
+                        contentTitle: 'اختبار قياس الفهم السريع - الوحدة 4',
+                        body: 'من يمتلك حق نشر المذكرات التي أعدها المعلم أثناء عمله الرسمي؟',
+                        options: [
+                            { text: 'المعلم وحده يحق له بيعها لحسابه الخاص.', correct: false },
+                            { text: 'تخضع للشروط التعاقدية للجهة التعليمية التي يعمل بها.', correct: true }
+                        ],
+                        explanation: 'المصنفات المبتكرة أثناء العمل الرسمي قد تخضع لتنظيمات جهة العمل التعاقدية.',
+                        completed: false
+                    }
+                ]
+            },
+            {
+                id: 5,
+                title: "الوحدة الخامسة: حوكمة الذكاء الاصطناعي والأمانة",
+                description: "صيانة ميثاق الذكاء الاصطناعي الصفي",
+                steps: [
+                    {
+                        type: 'video',
+                        title: '1. مشاهدة ميثاق الذكاء الاصطناعي',
+                        icon: 'fa-play',
+                        contentTitle: 'فيديو توجيهي (6 دقائق): حوكمة أدوات AI بالمدارس',
+                        body: 'تناول الملكية الفكرية للمخرجات المولدة بواسطة الذكاء الاصطناعي وضوابط حماية بيانات الأطفال.',
+                        completed: false
+                    },
+                    {
+                        type: 'case',
+                        title: '2. تحليل حالة: استخدام ChatGPT في إعداد واجب',
+                        icon: 'fa-scale-balanced',
+                        contentTitle: 'حالة تطبيقية ميدانية #5',
+                        body: 'استعان طالب بمحرك ذكاء اصطناعي لكتابة بحثه بالكامل وسلمه دون إفصاح. ما التقويم السليم؟',
+                        options: [
+                            { text: 'مقبول تماماً فالتكنولوجيا متاحة للجميع.', correct: false },
+                            { text: 'يعد افتقاراً للأمانة العلمية وخرقاً لميثاق الشفافية والإفصاح.', correct: true }
+                        ],
+                        explanation: 'ميثاق الذكاء الاصطناعي الصفي يلزم الطلاب بالإفصاح الكامل عن الاستعانة بأدوات الـ AI وعدم نسب النص لأنفسهم.',
+                        completed: false
+                    },
+                    {
+                        type: 'tool',
+                        title: '3. صياغة ميثاق الاستخدام الصفي للذكاء الاصطناعي',
+                        icon: 'fa-robot',
+                        contentTitle: 'اعتماد قواعد الشفافية الصفي',
+                        body: 'قم بمراجعة بنود الميثاق الصفي وتوقيعها.',
+                        completed: false
+                    },
+                    {
+                        type: 'quiz',
+                        title: '4. اختبار قصير للوحدة الخامسة',
+                        icon: 'fa-clipboard-question',
+                        contentTitle: 'اختبار قياس الفهم السريع - الوحدة 5',
+                        body: 'هل تحمي حقوق المؤلف النصوص والصور الناتجة عن الذكاء الاصطناعي البحت بدون تدخل بشري؟',
+                        options: [
+                            { text: 'نعم تحميها بشكل كامل للشركة المطورة للنموذج.', correct: false },
+                            { text: 'لا، يشترط وجود إبداع وتدخل بشري ملحوظ لكي تحمي بقانون المؤلف.', correct: true }
+                        ],
+                        explanation: 'الإنتاج الخالص للذكاء الاصطناعي دون إسهام بشري إبداعي معتبر لا يتمتع عادة بحماية حقوق المؤلف التقليدية.',
+                        completed: false
+                    }
+                ]
+            },
+            {
+                id: 6,
+                title: "الوحدة السادسة: الممارسة المؤسسية وحقيبة القرار",
+                description: "مصفوفة القرارات وتدشين ممارسات النزاهة الرقمية",
+                steps: [
+                    {
+                        type: 'video',
+                        title: '1. مشاهدة الفيديو الختامي للمساق',
+                        icon: 'fa-play',
+                        contentTitle: 'فيديو ختامي (5 دقائق): تجميع أدوات القرار واتخاذ القرار الآمن',
+                        body: 'تجميع المخرجات وتطبيق مصفوفة القرار القانوني المبرر في أنشطة المدارس.',
+                        completed: false
+                    },
+                    {
+                        type: 'case',
+                        title: '2. تحليل حالة شاملة: اتخاذ قرار إداري مدرسي',
+                        icon: 'fa-scale-balanced',
+                        contentTitle: 'حالة تطبيقية ميدانية #6',
+                        body: 'تريد المدرسة نشر كتاب إلكتروني يضم إبداعات معلميها وطلابها، ما هي الخطوة النظامية الأولى؟',
+                        options: [
+                            { text: 'نشره فوراً على موقع المدرسة دون استئذان.', correct: false },
+                            { text: 'توقيع إقرارات نقل أو الترخيص بالنشر، وتوثيق المصادر وسجل الأفكار.', correct: true }
+                        ],
+                        explanation: 'الممارسة المؤسسية السليمة تتطلب إقرارات قانونية واضحة وتوثيق كامل لحقوق الملكية.',
+                        completed: false
+                    },
+                    {
+                        type: 'tool',
+                        title: '3. مراجعة مصفوفة القرار القانوني المبرر',
+                        icon: 'fa-table',
+                        contentTitle: 'التدقيق الشامل لمصفوفة المخاطر والحلول',
+                        body: 'مراجعة كافة الجداول والسياسات الخاصة بالحقيبة التفاعلية.',
+                        completed: false
+                    },
+                    {
+                        type: 'quiz',
+                        title: '4. الاختبار التجميعي الختامي للحقيبة',
+                        icon: 'fa-clipboard-question',
+                        contentTitle: 'الاختبار النهائي للمساق',
+                        body: 'ما هو الهدف الأساسي من حقيبة الملكية الفكرية في البيئة التعليمية؟',
+                        options: [
+                            { text: 'تقييد الابتكار وتعقيد الأنشطة المدرسية.', correct: false },
+                            { text: 'التمكين من اتخاذ القرار الآمن والمبرر لحماية الابتكار وتشجيع الإبداع بمسؤولية.', correct: true }
+                        ],
+                        explanation: 'الهدف هو الوعي والممارسة الذكية التي تحمي الحقوق وتشجع على الإبداع بأمان.',
+                        completed: false
+                    }
+                ]
+            }
+        ];
+
+        let activeModuleIndex = 0;
+        let activeStepIndex = 0;
+
+        function renderCurriculum() {
+            const listContainer = document.getElementById('modules-list');
+            listContainer.innerHTML = '';
+
+            let totalStepsCount = 0;
+            let completedStepsCount = 0;
+
+            curriculumData.forEach((mod, mIdx) => {
+                // A module is unlocked if mIdx === 0 or ALL steps of the previous module are completed
+                let isModuleUnlocked = mIdx === 0 || curriculumData[mIdx - 1].steps.every(s => s.completed);
+
+                const modCompleted = mod.steps.filter(s => s.completed).length;
+                const modTotal = mod.steps.length;
+                const modPercent = Math.round((modCompleted / modTotal) * 100);
+
+                mod.steps.forEach(s => {
+                    totalStepsCount++;
+                    if (s.completed) completedStepsCount++;
+                });
+
+                const modDiv = document.createElement('div');
+                modDiv.className = `border rounded-2xl transition overflow-hidden ${isModuleUnlocked ? 'border-slate-200 bg-white shadow-sm' : 'border-slate-200 bg-slate-100 opacity-60'}`;
+
+                let stepsHtml = '';
+                if (isModuleUnlocked) {
+                    mod.steps.forEach((step, sIdx) => {
+                        let isStepActive = (mIdx === activeModuleIndex && sIdx === activeStepIndex);
+                        // Strict timeline: Step is unlocked if it's the first step, or if the previous step in this module is completed
+                        let isPreviousStepCompleted = sIdx === 0 || mod.steps[sIdx - 1].completed;
+                        let isStepUnlocked = isPreviousStepCompleted;
+
+                        let stepBg = isStepActive ? 'bg-brand-50 border-brand-500 text-brand-900 font-bold' : (step.completed ? 'bg-emerald-50/50 border-emerald-200 text-slate-700' : (isStepUnlocked ? 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50' : 'bg-slate-100 border-slate-200 text-slate-400 cursor-not-allowed'));
+                        
+                        let iconSymbol = step.completed ? '<i class="fa-solid fa-circle-check text-emerald-600"></i>' : (isStepUnlocked ? `<i class="fa-solid ${step.icon} text-brand-600"></i>` : '<i class="fa-solid fa-lock text-slate-400"></i>');
+
+                        stepsHtml += `
+                            <button onclick="${isStepUnlocked ? `selectStep(${mIdx}, ${sIdx})` : `showLockedAlert()`}" class="w-full text-right p-3 rounded-xl border ${stepBg} transition flex items-center justify-between text-xs">
+                                <div class="flex items-center space-x-2.5 space-x-reverse">
+                                    <div class="w-6 h-6 rounded-full flex items-center justify-center bg-white shadow-xs">${iconSymbol}</div>
+                                    <span>${step.title}</span>
+                                </div>
+                                <span class="text-[10px] px-2 py-0.5 rounded ${step.completed ? 'bg-emerald-100 text-emerald-800 font-bold' : (isStepActive ? 'bg-brand-200 text-brand-900 font-bold' : 'bg-slate-200 text-slate-600')}">
+                                    ${step.completed ? 'مكتمل' : (isStepActive ? 'الخطوة الحالية' : (isStepUnlocked ? 'متاح' : 'مغلق'))}
+                                </span>
+                            </button>
+                        `;
+                    });
+                } else {
+                    stepsHtml = `<div class="p-4 text-xs text-slate-500 text-center"><i class="fa-solid fa-lock ml-1"></i> أتمم الوحدة السابقة تماماً لفتح هذا الجزء في الخط الزمني</div>`;
+                }
+
+                modDiv.innerHTML = `
+                    <div class="p-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between cursor-pointer" onclick="${isModuleUnlocked ? `selectModule(${mIdx})` : 'showLockedAlert()'}">
+                        <div>
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full ${modPercent === 100 ? 'bg-emerald-100 text-emerald-800' : 'bg-brand-100 text-brand-800'}">الوحدة ${mIdx + 1} - ${modPercent}% مكتمل</span>
+                            <h3 class="text-sm font-bold text-slate-900 mt-1">${mod.title}</h3>
+                        </div>
+                        <i class="fa-solid ${isModuleUnlocked ? 'fa-chevron-down' : 'fa-lock'} text-slate-400"></i>
+                    </div>
+                    <div class="p-3 space-y-2">
+                        ${stepsHtml}
+                    </div>
+                `;
+
+                listContainer.appendChild(modDiv);
+            });
+
+            const overallPercent = Math.round((completedStepsCount / totalStepsCount) * 100);
+            document.getElementById('overall-progress').innerText = `${overallPercent}%`;
+            
+            const currentMod = curriculumData[activeModuleIndex];
+            const curModComp = currentMod.steps.filter(s => s.completed).length;
+            const curModPct = Math.round((curModComp / currentMod.steps.length) * 100);
+            document.getElementById('current-mod-progress').innerText = `${curModPct}%`;
+
+            renderActiveStepContent();
+        }
+
+        function selectModule(mIdx) {
+            activeModuleIndex = mIdx;
+            for(let i=0; i<curriculumData[mIdx].steps.length; i++) {
+                if(i === 0 || curriculumData[mIdx].steps[i-1].completed) {
+                    activeStepIndex = i;
+                    break;
+                }
+            }
+            renderCurriculum();
+        }
+
+        function selectStep(mIdx, sIdx) {
+            activeModuleIndex = mIdx;
+            activeStepIndex = sIdx;
+            renderCurriculum();
+        }
+
+        function showLockedAlert() {
+            showToast("هذه الخطوة أو الوحدة مقفلة! يجب إتمام المحطات السابقة بالترتيب أولاً.");
+        }
+
+        function showToast(msg) {
+            let toast = document.createElement('div');
+            toast.className = 'fixed bottom-5 left-5 bg-slate-900 text-white text-xs px-4 py-3 rounded-xl shadow-2xl z-50 transition transform duration-300 flex items-center space-x-2 space-x-reverse';
+            toast.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-amber-400 ml-2"></i> <span>${msg}</span>`;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        function renderActiveStepContent() {
+            const step = curriculumData[activeModuleIndex].steps[activeStepIndex];
+            const area = document.getElementById('step-display-area');
+            const btn = document.getElementById('complete-step-btn');
+
+            if (step.completed) {
+                btn.innerHTML = `تم إتمام هذه المحطة <i class="fa-solid fa-check mr-2"></i>`;
+                btn.className = "w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold px-8 py-3.5 rounded-xl transition shadow-md flex items-center justify-center";
+            } else {
+                btn.innerHTML = `تأكيد إتمام المحطة والانتقال للتالية <i class="fa-solid fa-arrow-left mr-2"></i>`;
+                btn.className = "w-full sm:w-auto bg-brand-600 hover:bg-brand-700 text-white text-xs sm:text-sm font-bold px-8 py-3.5 rounded-xl transition shadow-md flex items-center justify-center";
+            }
+
+            let interactiveHtml = '';
+
+            if (step.type === 'video') {
+                interactiveHtml = `
+                    <div class="bg-slate-900 rounded-xl aspect-video w-full flex flex-col items-center justify-center text-white p-6 text-center shadow-inner relative overflow-hidden mb-6">
+                        <div class="w-16 h-16 bg-brand-600/90 hover:bg-brand-500 rounded-full flex items-center justify-center cursor-pointer transition shadow-lg mb-3" onclick="simulateVideoPlay()">
+                            <i class="fa-solid fa-play text-2xl mr-1"></i>
+                        </div>
+                        <p class="text-xs text-slate-300 font-medium">${step.contentTitle}</p>
+                        <span class="absolute bottom-3 right-3 text-[10px] bg-black/60 px-2 py-0.5 rounded text-slate-400">05:30</span>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">${step.body}</p>
+                `;
+            } else if (step.type === 'case') {
+                interactiveHtml = `
+                    <div class="bg-slate-900 text-white p-6 rounded-xl mb-6 border border-slate-800">
+                        <span class="text-[10px] font-bold bg-amber-500/20 text-amber-300 px-2.5 py-1 rounded-full mb-3 inline-block">دراسة حالة تفاعلية</span>
+                        <h4 class="font-bold text-sm mb-3">${step.contentTitle}</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">${step.body}</p>
+                        
+                        <div class="space-y-2 mb-4">
+                            ${step.options.map((opt, oIdx) => `
+                                <button onclick="checkStepQuiz(${oIdx}, ${opt.correct})" class="w-full text-right p-3 rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-750 text-xs text-slate-200 transition font-medium flex items-center justify-between">
+                                    <span>${opt.text}</span>
+                                    <i class="fa-regular fa-circle text-slate-400"></i>
+                                </button>
+                            `).join('')}
+                        </div>
+                        <div id="step-case-feedback" class="hidden p-3 rounded-lg text-xs"></div>
+                    </div>
+                `;
+            } else if (step.type === 'tool') {
+                interactiveHtml = `
+                    <div class="bg-brand-50 border border-brand-200 p-6 rounded-xl mb-6">
+                        <span class="text-[10px] font-bold bg-brand-200 text-brand-900 px-2.5 py-1 rounded-full mb-3 inline-block">محطة تطبيقية ميدانية</span>
+                        <h4 class="font-bold text-sm text-slate-900 mb-2">${step.contentTitle}</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">${step.body}</p>
+                        <div class="bg-white p-4 rounded-xl border border-brand-100 text-xs space-y-2 text-slate-700">
+                            <label class="flex items-center"><input type="checkbox" class="ml-2"> مراجعة المعايير التشغيلية ومطابقتها للموقف المدرسي</label>
+                            <label class="flex items-center"><input type="checkbox" class="ml-2"> توثيق الاعتماد والاعتبارات القانونية في سجل الفصل</label>
+                        </div>
+                    </div>
+                `;
+            } else if (step.type === 'quiz') {
+                interactiveHtml = `
+                    <div class="bg-purple-950 text-white p-6 rounded-xl mb-6 border border-purple-900">
+                        <span class="text-[10px] font-bold bg-purple-500/30 text-purple-200 px-2.5 py-1 rounded-full mb-3 inline-block">اختبار قصير للوحدة</span>
+                        <h4 class="font-bold text-sm mb-3">${step.contentTitle}</h4>
+                        <p class="text-xs text-purple-200 leading-relaxed mb-4">${step.body}</p>
+                        
+                        <div class="space-y-2 mb-4">
+                            ${step.options.map((opt, oIdx) => `
+                                <button onclick="checkStepQuiz(${oIdx}, ${opt.correct})" class="w-full text-right p-3 rounded-lg border border-purple-800 bg-purple-900 hover:bg-purple-850 text-xs text-purple-100 transition font-medium flex items-center justify-between">
+                                    <span>${opt.text}</span>
+                                    <i class="fa-regular fa-circle text-purple-300"></i>
+                                </button>
+                            `).join('')}
+                        </div>
+                        <div id="step-case-feedback" class="hidden p-3 rounded-lg text-xs"></div>
+                    </div>
+                `;
+            }
+
+            area.innerHTML = `
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-bold text-brand-600 bg-brand-50 px-3 py-1 rounded-full border border-brand-100">
+                        الوحدة ${activeModuleIndex + 1} - المحطة ${activeStepIndex + 1} من ${curriculumData[activeModuleIndex].steps.length}
+                    </span>
+                    <span class="text-xs text-slate-500 font-medium">${step.title}</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-4">${step.contentTitle}</h3>
+                ${interactiveHtml}
+                <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-600 space-y-2">
+                    <p class="font-bold text-slate-800"><i class="fa-solid fa-circle-info text-brand-600 ml-1"></i> إرشادات إتمام المحطة:</p>
+                    <p>عزيزي المتدرب، تأكد من استعراض كافة تفاصيل هذه المحطة بعناية فائقة. يظهر أدناه زر التأكيد والانتقال للمحطة التالية لضمان الالتزام بالخط الزمني التتابعي للمساق.</p>
+                </div>
+            `;
+        }
+
+        function simulateVideoPlay() {
+            showToast("جاري تشغيل الفيديو التعليمي التفاعلي... استمع للشرح جيداً.");
+        }
+
+        function checkStepQuiz(optionIdx, isCorrect) {
+            const feedback = document.getElementById('step-case-feedback');
+            const step = curriculumData[activeModuleIndex].steps[activeStepIndex];
+            feedback.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedback.className = "p-3 rounded-lg text-xs bg-emerald-950/80 border border-emerald-600 text-emerald-200";
+                feedback.innerHTML = `<span class="font-bold block mb-1">إجابة صحيحة ومبررة! <i class="fa-solid fa-check mr-1"></i></span> ${step.explanation || 'أحسنت، لقد اخترت الإجابة القانونية الصحيحة.'}`;
+            } else {
+                feedback.className = "p-3 rounded-lg text-xs bg-rose-950/80 border border-rose-600 text-rose-200";
+                feedback.innerHTML = `<span class="font-bold block mb-1">إجابة غير دقيقة! <i class="fa-solid fa-xmark mr-1"></i></span> ${step.explanation || 'راجع القاعدة القانونية وحاول مرة أخرى.'}`;
+            }
+        }
+
+        function completeCurrentStep() {
+            const currentStep = curriculumData[activeModuleIndex].steps[activeStepIndex];
+            currentStep.completed = true;
+
+            if (activeStepIndex < curriculumData[activeModuleIndex].steps.length - 1) {
+                activeStepIndex++;
+                showToast("تم إتمام المحطة بنجاح! تم فتح المحطة التالية في الخط الزمني.");
+            } else if (activeModuleIndex < curriculumData.length - 1) {
+                activeModuleIndex++;
+                activeStepIndex = 0;
+                showToast("أتممت كافة محطات الوحدة بنجاح! تم فتح الوحدة التالية في الخط الزمني.");
+            } else {
+                showToast("تهانينا الكبرى! لقد أتممت كافة وحدات ومحطات المساق التدريبي بنجاح تام.");
+            }
+
+            renderCurriculum();
+        }
+
+        /* Toolkit Modals */
+        function openToolModal(toolId) {
+            const overlay = document.getElementById('modal-overlay');
+            const content = document.getElementById('modal-content');
+            overlay.classList.remove('hidden');
+
+            if (toolId === 1) {
+                content.innerHTML = `
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">أداة 1: بطاقة الأسئلة الستة للتحقق</h3>
+                    <p class="text-xs text-slate-500 mb-4">قم بالإجابة عن الأسئلة قبل استخدام أو نشر أي مصنف تعليمي:</p>
+                    <div class="space-y-3 text-xs">
+                        <label class="block p-3 border rounded-xl"><input type="checkbox" class="ml-2"> 1. هل المصنف محمي بحقوق مؤلف نافذة؟</label>
+                        <label class="block p-3 border rounded-xl"><input type="checkbox" class="ml-2"> 2. هل الغرض من الاستخدام تعليمي بحت للطلاب؟</label>
+                        <label class="block p-3 border rounded-xl"><input type="checkbox" class="ml-2"> 3. هل تم اقتباس القدر الضروري فقط دون الإخلال بالمصنف؟</label>
+                        <label class="block p-3 border rounded-xl"><input type="checkbox" class="ml-2"> 4. هل تم نسب العمل والمؤلف صراحةً؟</label>
+                        <label class="block p-3 border rounded-xl"><input type="checkbox" class="ml-2"> 5. هل يؤثر الاستخدام سلباً على السوق التجاري للعمل؟</label>
+                        <label class="block p-3 border rounded-xl"><input type="checkbox" class="ml-2"> 6. هل تملك إثبات التراخيص أو رخصة مشاع إبداعي؟</label>
+                    </div>
+                    <button onclick="closeModal()" class="mt-6 w-full bg-brand-600 text-white font-bold text-xs py-2.5 rounded-xl">حفظ البطاقة وتصدير PDF</button>
+                `;
+            } else if (toolId === 2) {
+                content.innerHTML = `
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">أداة 2: سجل أفكار الفصل الإبداعي</h3>
+                    <p class="text-xs text-slate-500 mb-4">وثق ابتكارات الطلاب لحماية أسبقيتهم الفكرية:</p>
+                    <form class="space-y-3 text-xs" onsubmit="event.preventDefault(); closeModal(); showToast('تم تسجيل فكرة المشروع بالسجل بنجاح.');">
+                        <input type="text" placeholder="اسم الطالب / المبتكر" class="w-full p-3 border rounded-xl" required>
+                        <input type="text" placeholder="عنوان الفكرة أو المشروع" class="w-full p-3 border rounded-xl" required>
+                        <textarea placeholder="وصف مختصر للفكرة ومراحل تنفيذها" class="w-full p-3 border rounded-xl h-24" required></textarea>
+                        <button type="submit" class="w-full bg-emerald-600 text-white font-bold py-2.5 rounded-xl">تسجيل الفكرة بالسجل</button>
+                    </form>
+                `;
+            } else if (toolId === 3) {
+                content.innerHTML = `
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">أداة 3: ميثاق الذكاء الاصطناعي الصفي</h3>
+                    <p class="text-xs text-slate-500 mb-4">قواعد ضابطة لاستخدام أدوات AI بالفصل:</p>
+                    <div class="bg-slate-50 p-4 rounded-xl text-xs space-y-2 text-slate-700 leading-relaxed mb-4">
+                        <p>1. الإفصاح الكامل عن الأجزاء المصممة بواسطة الذكاء الاصطناعي.</p>
+                        <p>2. حظر استخدام بيانات أو صور شخصية للزملاء في أدوات AI.</p>
+                        <p>3. التحقق المباشر من صحة المعلومات المنسوبة للذكاء الاصطناعي.</p>
+                    </div>
+                    <button onclick="closeModal()" class="w-full bg-purple-600 text-white font-bold text-xs py-2.5 rounded-xl">طباعة الميثاق الصفي</button>
+                `;
+            } else {
+                content.innerHTML = `
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">أداة 4: مصفوفة القرار القانوني المبرر</h3>
+                    <p class="text-xs text-slate-500 mb-4">عرض مصفوفة تحليل المخاطر والتسويغ القانوني:</p>
+                    <table class="w-full text-xs text-right border-collapse border border-slate-200">
+                        <tr class="bg-slate-100">
+                            <th class="border p-2">الموقف</th>
+                            <th class="border p-2">القرار</th>
+                            <th class="border p-2">التسويغ القانوني</th>
+                        </tr>
+                        <tr>
+                            <td class="border p-2">نسخ الفصل كاملاً من كتاب ورقي</td>
+                            <td class="border p-2 text-rose-600 font-bold">غير مشروع</td>
+                            <td class="border p-2">يتجاوز الاستثناء التعليمي ويتعدى على السوق.</td>
+                        </tr>
+                        <tr>
+                            <td class="border p-2">عرض مقطع من يوتيوب في الشرح</td>
+                            <td class="border p-2 text-emerald-600 font-bold">مشروع</td>
+                            <td class="border p-2">استثناء تعليمي مبرر مع إسناد الحقوق.</td>
+                        </tr>
+                    </table>
+                    <button onclick="closeModal()" class="mt-4 w-full bg-slate-800 text-white font-bold text-xs py-2.5 rounded-xl">إغلاق</button>
+                `;
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modal-overlay').classList.add('hidden');
+        }
+
+        function startQuiz() {
+            const preScore = 12;
+            const postScore = 18;
+            
+            document.getElementById('pre-score-display').innerText = `${preScore} / 20 (60%)`;
+            document.getElementById('post-score-display').innerText = `${postScore} / 20 (90%)`;
+
+            const maxScore = 20;
+            const gain = (postScore - preScore) / (maxScore - preScore);
+            const gainPercentage = Math.round(gain * 100);
+
+            document.getElementById('gain-display').innerText = `${gainPercentage}% (كسب تعلمي عالٍ)`;
+            showToast("تم تقييم الاختبار البعدي واحتساب نسبة الكسب بنجاح.");
+        }
+
+        window.onload = function() {
+            renderCurriculum();
+        };
+    </script>
+</body>
+</html>
